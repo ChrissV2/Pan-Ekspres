@@ -24,7 +24,6 @@ body {
 	background-color: hsl(0, 0%, 95%);
 }
 
-
 // NAV
 
 .burger-btn {
@@ -36,7 +35,6 @@ body {
 	border: 1px solid transparent;
 	cursor: pointer;
 	z-index: 100;
-	
 
 	&:hover {
 		.burger-btn__bars::after,
@@ -55,7 +53,6 @@ body {
 		position: relative;
 		width: 40px;
 		height: 30px;
-		
 	}
 
 	&__bars,
@@ -105,6 +102,7 @@ body {
 		font-size: 2.8rem;
 		color: $pure-white;
 		text-decoration: none;
+		transition: letter-spacing 0.3s;
 
 		&::before {
 			position: absolute;
@@ -137,7 +135,6 @@ body {
 .nav-items-animation {
 	animation: navItemsAnimation 1s both;
 }
-
 
 .black-bars-color,
 .black-bars-color::after,
@@ -183,7 +180,7 @@ body {
 		cursor: pointer;
 
 		&::before {
-			background-color: rgb(234, 198, 150);
+			background-color: rgb(245, 245, 245);
 		}
 	}
 }
@@ -241,11 +238,6 @@ body {
 	}
 }
 
-////// Islands
-
-// .islands {
-
-// }
 
 //// Reviews
 
@@ -315,22 +307,33 @@ body {
 
 .contact {
 	position: relative;
-	background-color: $light-white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	overflow: hidden;
+	color: white;
+
+	& .section-heading {
+		color: white;
+	}
 
 	.white-block-left {
 		background-color: $dark;
 	}
 
-	&__form,
-	&__form-top {
+	&__wrapper {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
+		z-index: 10;
 	}
 
 	&__form-label {
+		align-self: flex-start;
 		margin-bottom: 0.5em;
-		text-transform: uppercase;
+		z-index: 10;
 	}
 
 	&__form-input {
@@ -342,23 +345,100 @@ body {
 		width: 100%;
 		resize: vertical;
 		max-height: 500px;
-		min-height: 150px;
+		min-height: 292px;
+		z-index: 10;
 	}
 
 	&__form-btn {
-		align-self: flex-end;
-		padding: 1em;
-		width: 100%;
-		max-width: 300px;
+		align-self: center;
+		padding: 0.8em;
+		width: 50%;
+		// max-width: 300px;
 		color: $pure-white;
-		border: none;
+		border: 2px solid rgba(128, 128, 128, 0.3);
 		border-radius: 8px;
-		background-color: $main-color;
+		background-color: white;
+		color: black;
+		font-family: 'poppins';
+		font-size: 1.6rem;
 		cursor: pointer;
 
 		&::before {
-			background-color: $secondary-color;
+			background-color: rgb(224, 224, 224);
 		}
+	}
+
+	&__form {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-direction: column;
+		width: 60%;
+		border-radius: 26px;
+		background-color: white;
+		color: black;
+
+		&-left {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			width: 45%;
+			margin: 2em 0 0 2em;
+		}
+
+		&-right {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			width: 45%;
+			margin: 2em 2em 0 2em;
+		}
+
+		&-upperPart{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+		}
+
+		&-bottom {
+			display: flex;	
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			margin-bottom: 2em;
+		}
+	}
+
+	&__details {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-bottom: 4em;
+		width: 80%;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-icon {
+			width: 40px;
+			margin-bottom: 1em;
+		}
+	}
+
+	&__map-map {
+		border-radius: 26px;
+	}
+
+	&__bgcImg {
+		position: absolute;
+		width: 110%;
+		height: 110%;
+		filter: blur(20px) brightness(80%);
 	}
 }
 

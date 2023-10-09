@@ -139,12 +139,50 @@
 
         <section class="contact section-padding section white-section" id="contact">
 
+            <img src="./dist/img/coffee_beans.jpg" alt="" class="contact__bgcImg">
+
             <div class="white-block white-block-left"></div>
             <div class="white-block white-block-right"></div>
 
             <h2 class="section-heading">Kontakt</h2>
 
-            <div class="wrapper">
+            <div class="wrapper contact__wrapper">
+
+                <!-- <div class="contact__leftSide">
+
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.524831507759!2d17.336326976861724!3d50.468572486058356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711c56051469b15%3A0x6bb22e8ddac37a1f!2sPan%20ekspres%20-%20serwis%20i%20naprawa%20ekspres%C3%B3w!5e0!3m2!1sen!2spl!4v1696849437563!5m2!1sen!2spl"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="contact__map-map"></iframe>
+
+                </div>
+
+                <div class="contact__rightSide">
+
+                    <div class="contact__details">
+
+                        <div class="contact__details-address">
+
+                            <h3 class="contact__details-title">Adres</h3>
+                            <p class="contact__details-text">Prudnicka 25, 48-300 Nysa </p>
+
+                        </div>
+
+                        <div class="contact__details-address">
+
+                            <h3 class="contact__details-title">Numer Telefonu</h3>
+                            <p class="contact__details-text">+48 570 681 958</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="contact__bottomSide">
 
                 <form class="contact__form">
 
@@ -153,17 +191,74 @@
                         <label for="name" class="contact__form-label">Imię i nazwisko:</label>
                         <input type="text" class="contact__form-input" id="name">
 
+                        <label for="number" class="contact__form-label">Numer telefonu:</label>
+                        <input type="tel" class="contact__form-input" id="number">
+
                         <label for="email" class="contact__form-label">Adres e-mail:</label>
                         <input type="text" class="contact__form-input" id="email">
 
                     </div>
 
-                    <label for="msg" class="contact__form-label">Wiadomość:</label>
+                    <label for="msg" class="contact__form-label">W czym możemy pomóc:</label>
                     <textarea id="msg" class="contact__form-textarea"></textarea>
 
-                    <button type="submit" class="contact__form-btn btn-special-animation">Wyślij</button>
+                    <button type="submit" class="contact__form-btn btn-special-animation">Poproś o wycenę</button>
+
+                </form> -->
+
+                <div class="contact__details">
+
+                    <div class="contact__details-item">
+
+                        <img src="./dist/img/Icons/pin-solid.svg" alt="" class="contact__details-icon">
+                        <span class="contact__details-text">Prudnicka 25, 48-300 Nysa</span>
+
+                    </div>
+
+                    <div class="contact__details-item">
+
+                        <img src="./dist/img/Icons/phone-fill.svg" alt="" class="contact__details-icon">
+                        <span class="contact__details-text">+48 570 681 958</span>
+
+                    </div>
+
+
+                </div>
+
+                <form class="contact__form">
+
+                    <div class="contact__form-upperPart">
+
+                        <div class="contact__form-left">
+
+                            <label for="name" class="contact__form-label">Imię i nazwisko:</label>
+                            <input type="text" class="contact__form-input" id="name">
+    
+                            <label for="number" class="contact__form-label">Numer telefonu:</label>
+                            <input type="tel" class="contact__form-input" id="number">
+    
+                            <label for="email" class="contact__form-label">Adres e-mail:</label>
+                            <input type="text" class="contact__form-input" id="email">
+    
+                        </div>
+    
+                        <div class="contact__form-right">
+    
+                            <label for="msg" class="contact__form-label">W czym możemy pomóc:</label>
+                            <textarea id="msg" class="contact__form-textarea"></textarea>
+    
+                        </div>
+
+                    </div>
+
+                    <div class="contact__form-bottom">
+
+                        <button type="submit" class="contact__form-btn btn-special-animation">Poproś o wycenę</button>
+
+                    </div>
 
                 </form>
+
 
 
             </div>
@@ -229,7 +324,7 @@
 
         </div>
         <hr>
-        <p class="footer__bottom-text">&copy; <span class="footer__year"></span> Tropical Paradise</p>
+        <p class="footer__bottom-text">&copy; <span class="footer__year"></span> Pan Ekspres</p>
 
 
 
