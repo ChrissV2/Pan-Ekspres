@@ -20,6 +20,10 @@ body {
 	font-size: 1.6rem;
 }
 
+.white-section {
+	background-color: hsl(0, 0%, 95%);
+}
+
 
 // NAV
 
@@ -158,7 +162,7 @@ body {
 
 	&__heading {
 		font-size: 4.8rem;
-		font-weight: normal;
+		font-weight: bold;
 	}
 
 	&__text {
@@ -169,6 +173,7 @@ body {
 		margin-top: 2em;
 		padding: 0.8em 1.6em;
 		font-size: 1.4rem;
+		font-weight: bold;
 		background: $pure-white;
 		border: none;
 		border-radius: 8px;
@@ -178,7 +183,7 @@ body {
 		cursor: pointer;
 
 		&::before {
-			background-color: $light-white;
+			background-color: rgb(234, 198, 150);
 		}
 	}
 }
@@ -228,6 +233,7 @@ body {
 	&__title {
 		margin-bottom: 0.5em;
 		font-size: 4.8rem;
+		font-weight: bold;
 	}
 
 	&__text {
@@ -254,6 +260,7 @@ body {
 		position: relative;
 		margin: 2em;
 		padding: 2em;
+		height: 241px;
 		border-radius: 8px;
 		box-shadow: 3px 3px 10px #2e2e2e2e;
 		transition: transform 0.3s;
@@ -278,15 +285,29 @@ body {
 	}
 
 	&__box-quote {
-		margin-bottom: 1em;
+		align-self: start;
+		margin-bottom: 0.5em;
 		font-size: 3rem;
 		color: $main-color;
 	}
 
 	&__box-text {
-		margin-bottom: 1em;
+		margin-bottom: 2em;
 		font-size: 1.4rem;
 		color: $dark;
+	}
+
+	&__box-author {
+		align-self: end;
+		margin-bottom: 1em;
+		font-weight: bold;
+	}
+
+	&__box-info {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 }
 

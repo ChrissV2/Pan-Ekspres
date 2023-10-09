@@ -10,7 +10,7 @@
     position: absolute;
     height: 40px;
     width: 60%;
-    background-color: $pure-white;
+    background-color: hsl(0, 0%, 95%);
 
     &-left {
         bottom: 0;
@@ -27,7 +27,7 @@
 
 .btn-special-animation {
     position: relative;
-    transition: background-color .3s;
+    transition: background-color 0.5s, transform 0.3s;
     overflow: hidden;
     z-index: 0;
 
@@ -48,6 +48,10 @@
     &:hover::before {
         transform: scaleX(1);
         transform-origin: left;
+    }
+
+    &:hover {
+        transform: scale(1.1);
     }
 }
 
