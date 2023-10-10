@@ -4,7 +4,7 @@ const navBtns = document.querySelectorAll('.nav__item')
 const navBtnBars = document.querySelector('.burger-btn__bars')
 const allSections = document.querySelectorAll('.section')
 const footerYear = document.querySelector('.footer__year')
-let delayTime
+
 
 function active() {
 	navBar.classList.toggle('nav--active')
@@ -22,7 +22,7 @@ function active() {
 }
 
 const handleNavItemsAnimation = () => {
-	delayTime = 0
+	let delayTime = 0
 
 	navBtns.forEach(item => {
 		item.classList.toggle('nav-items-animation')
