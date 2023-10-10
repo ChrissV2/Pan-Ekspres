@@ -486,6 +486,57 @@ body {
 		height: 110%;
 		filter: blur(20px) brightness(80%);
 	}
+
+	&__modal {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 50%;
+		height: 30%;
+		background-color: white;
+		color: rgb(34, 197, 94);
+		border-radius: 26px;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		z-index: 100;
+		transform: scale(0);
+		opacity: 0;
+
+
+		&-icon {
+			width: 180px;
+			margin-bottom: 3em;
+		}
+
+		&-title {
+			margin-bottom: 1em;
+			font-size: 4rem;
+			font-weight: bold;
+		}
+
+		&-closeBtn {
+			padding: 1em 3em;
+			font-size: 2.5rem;
+			font-family: 'poppins';
+			font-weight: bold;
+			border-radius: 16px;
+			border: none;
+			transition: color 0.3s, transform 0.3s;
+			cursor: pointer;
+
+			&::before {
+				background-color: rgb(34, 197, 94);
+			}
+			
+			&:hover {
+				color: white;
+			}
+		}
+	}
 }
 
 ///// Footer
