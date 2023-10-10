@@ -4,7 +4,8 @@ const navBtns = document.querySelectorAll('.nav__item')
 const navBtnBars = document.querySelector('.burger-btn__bars')
 const allSections = document.querySelectorAll('.section')
 const footerYear = document.querySelector('.footer__year')
-
+const callBtn = document.querySelector('.contact__details-item--call')
+const navBtn = document.querySelector('.contact__details-item--navigate')
 
 function active() {
 	navBar.classList.toggle('nav--active')
@@ -19,6 +20,15 @@ function active() {
 	})
 
 	handleNavItemsAnimation()
+}
+
+const handleCallButton = () => {
+	const phoneNumber = '570 681 958'
+	window.open(`tel:${phoneNumber}`)
+}
+
+const handleNavButton = () => {
+	window.open(`https://www.google.com/maps/dir//Pan+ekspres+-+serwis+i+naprawa+ekspres%C3%B3w,+Prudnicka+25,+48-300+Nysa/@50.4685725,17.336327,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4711c56051469b15:0x6bb22e8ddac37a1f!2m2!1d17.3389019!2d50.4685691!3e0?entry=ttu`, `_blank`)
 }
 
 const handleNavItemsAnimation = () => {
@@ -51,3 +61,5 @@ const handleObserver = () => {
 handleCurrentYear()
 burgerBtn.addEventListener('click', active)
 window.addEventListener('scroll', handleObserver)
+callBtn.addEventListener('click', handleCallButton)
+navBtn.addEventListener('click', handleNavButton)
