@@ -231,22 +231,37 @@
 
                         <div class="contact__form-left">
 
-                            <label for="name" class="contact__form-label">Imię i nazwisko:</label>
-                            <input type="text" class="contact__form-input" id="name">
-    
-                            <label for="number" class="contact__form-label">Numer telefonu:</label>
-                            <input type="tel" class="contact__form-input" id="number">
-    
-                            <label for="email" class="contact__form-label">Adres e-mail:</label>
-                            <input type="text" class="contact__form-input" id="email">
-    
+                            <div class="contact__form-iconParent">
+
+                                <label for="name" class="contact__form-label">Imię i nazwisko:</label>
+                                <input type="text" class="contact__form-input" id="name">
+                                <img src="./dist/img/Icons/edit-name.svg" alt="" class="contact__form-icon">
+
+                            </div>
+
+                            <div class="contact__form-iconParent">
+
+                                <label for="number" class="contact__form-label">Numer telefonu:</label>
+                                <input type="tel" class="contact__form-input" id="number">
+                                <img src="./dist/img/Icons/phone.svg" alt="" class="contact__form-icon">
+
+                            </div>
+
+                            <div class="contact__form-iconParent">
+
+                                <label for="email" class="contact__form-label">Adres e-mail:</label>
+                                <input type="text" class="contact__form-input" id="email">
+                                <img src="./dist/img/Icons/mail-outline.svg" alt="" class="contact__form-icon">
+
+                            </div>
+
                         </div>
-    
+
                         <div class="contact__form-right">
-    
+
                             <label for="msg" class="contact__form-label">W czym możemy pomóc:</label>
                             <textarea id="msg" class="contact__form-textarea"></textarea>
-    
+
                         </div>
 
                     </div>
@@ -258,6 +273,15 @@
                     </div>
 
                 </form>
+
+                <div class="contact__map">
+
+                    <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.524831507759!2d17.336326976861724!3d50.468572486058356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4711c56051469b15%3A0x6bb22e8ddac37a1f!2sPan%20ekspres%20-%20serwis%20i%20naprawa%20ekspres%C3%B3w!5e0!3m2!1sen!2spl!4v1696849437563!5m2!1sen!2spl"
+                    width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="contact__map-map"></iframe>
+
+                </div>
 
 
 
@@ -277,27 +301,22 @@
             <div class="footer__boxes">
 
                 <div class="footer__box">
-                    <h3 class="footer__box-title"><i class="fas fa-kiwi-bird"></i> Tp Inc.</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolorum eligendi saepe odio
-                        facilis perferendis quis recusandae impedit eos aliquid!</p>
-                    <div class="footer__box-social">
-
-                        <a href="#" class="footer__box-link"><i class="fab fa-twitter-square"></i></a>
-                        <a href="#" class="footer__box-link"><i class="fab fa-facebook-square"></i></a>
-                        <a href="#" class="footer__box-link"><i class="fab fa-instagram"></i></a>
-
-                    </div>
+                    <h3 class="footer__box-title"></i> Pan Ekspres</h3>
+                    <p>Doświadczenie i wiedza pozwala nam świadczyć usługi na najwyższym poziomie. Możliwy odbiór ekspresu od klienta oraz dostarczenie pod wskazany adres, wystawiamy pokiwtowania na sprzęt przyjęty do naprawy, udzielamy gwarancji na naprawę.</p>
                 </div>
 
                 <div class="footer__box footer__box-desktop">
 
-                    <h3 class="footer__box-title">Wyspy</h3>
+                    <h3 class="footer__box-title">Godziny Otwarcia</h3>
                     <ul class="footer__box-list">
 
-                        <li class="footer__box-list-item"><a href="#">Wyspa Tiki Taki</a></li>
-                        <li class="footer__box-list-item"><a href="#">Wyspa Toca Toca</a></li>
-                        <li class="footer__box-list-item"><a href="#">Wyspa Nobu</a></li>
-                        <li class="footer__box-list-item"><a href="#">Pozostałe wyspy</a></li>
+                        <li class="footer__box-list-item">Pon: 9:00 - 17:20</li>
+                        <li class="footer__box-list-item">Wt: 9:00 - 17:20</li>
+                        <li class="footer__box-list-item">Śr: 9:00 - 17:20</li>
+                        <li class="footer__box-list-item">Czw: 9:00 - 17:20</li>
+                        <li class="footer__box-list-item">Pt: 9:00 - 17:20</li>
+                        <li class="footer__box-list-item">Sob: Zamknięte</li>
+                        <li class="footer__box-list-item">Niedz: Zamknięte</li>
 
                     </ul>
 
@@ -305,13 +324,11 @@
 
                 <div class="footer__box footer__box-desktop">
 
-                    <h3 class="footer__box-title">O Firmie</h3>
+                    <h3 class="footer__box-title">Kontakt</h3>
                     <ul class="footer__box-list">
 
-                        <li class="footer__box-list-item"><a href="#">O nas</a></li>
-                        <li class="footer__box-list-item"><a href="#">Zarząd</a></li>
-                        <li class="footer__box-list-item"><a href="#">Kariera</a></li>
-                        <li class="footer__box-list-item"><a href="#">FAQ</a></li>
+                        <li class="footer__box-list-item">Prudnicka 25, 48-300 Nysa</li>
+                        <li class="footer__box-list-item">+48 570 681 958</li>
 
                     </ul>
 
