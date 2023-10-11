@@ -257,6 +257,13 @@ body {
 		box-shadow: 3px 3px 10px #2e2e2e2e;
 		transition: transform 0.3s;
 
+		&-arrows {
+			position: absolute;
+			bottom: 5px;	
+			right: 15px;
+			width: 50px;
+		}
+
 		&:hover {
 			transform: scale(0.95);
 		}
