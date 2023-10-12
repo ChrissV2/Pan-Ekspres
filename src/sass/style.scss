@@ -582,6 +582,11 @@ body {
 			transition: opacity 0.4s;
 			opacity: 0;
 			transform: scale(0);
+
+			&--active {
+				transform: scale(1);
+				opacity: 1;
+			}
 		}
 
 		&--active {

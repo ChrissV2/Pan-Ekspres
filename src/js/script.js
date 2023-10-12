@@ -8,6 +8,7 @@ let callBtn
 let navBtn
 let body
 let modal
+let modalShadow
 let sendBtn
 let closeModalBtn
 let nameInput
@@ -47,6 +48,7 @@ const prepareDOMElements = () => {
 	errorMsgPhone = document.querySelector('.contact__form-errorMsg--phone')
 	errorMsgMail = document.querySelector('.contact__form-errorMsg--mail')
 	errorMsgTextArea = document.querySelector('.contact__form-errorMsg--textArea')
+	modalShadow = document.querySelector('.contact__modal-shadow')
 }
 
 const prepareDOMEvents = () => {
@@ -64,6 +66,8 @@ const prepareDOMEvents = () => {
 
 const closeModal = () => {
 	modal.classList.remove('contact__modal--active')
+	modalShadow.classList.remove('contact__modal-shadow--active')
+	body.classList.remove('overflowHidden')
 }
 
 const clearInputs = () => {
@@ -126,6 +130,8 @@ const countErrors = () => {
 		return
 	} else if (errorCount === 0 && document.location.search === '?mail_status=sent') {
 		modal.classList.add('contact__modal--active')
+		modalShadow.classList.add('contact__modal-shadow--active')
+		body.classList.add('overflowHidden')
 		clearInputs()
 		errorCount = 0
 	} else if (errorCount === 0 && document.location.search === '?mail_status=error') {
@@ -133,6 +139,8 @@ const countErrors = () => {
 	}
 
 }
+
+
 
 function active() {
 	navBar.classList.toggle('nav--active')
