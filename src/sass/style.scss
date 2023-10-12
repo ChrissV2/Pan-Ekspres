@@ -33,6 +33,7 @@ body {
 	padding: 1em;
 	background: none;
 	border: 1px solid transparent;
+	border-radius: 16px;
 	cursor: pointer;
 	z-index: 100;
 
@@ -141,6 +142,13 @@ body {
 .black-bars-color::after,
 .black-bars-color::before {
 	background-color: $dark;
+}
+
+.grey-bars-color,
+.grey-bars-color::after,
+.grey-bars-color::before {
+	// background-color: $dark;
+	background-color: rgb(185, 185, 185);
 }
 
 // Header

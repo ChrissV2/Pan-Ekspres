@@ -28,7 +28,10 @@ const handleCallButton = () => {
 }
 
 const handleNavButton = () => {
-	window.open(`https://www.google.com/maps/dir//Pan+ekspres+-+serwis+i+naprawa+ekspres%C3%B3w,+Prudnicka+25,+48-300+Nysa/@50.4685725,17.336327,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4711c56051469b15:0x6bb22e8ddac37a1f!2m2!1d17.3389019!2d50.4685691!3e0?entry=ttu`, `_blank`)
+	window.open(
+		`https://www.google.com/maps/dir//Pan+ekspres+-+serwis+i+naprawa+ekspres%C3%B3w,+Prudnicka+25,+48-300+Nysa/@50.4685725,17.336327,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x4711c56051469b15:0x6bb22e8ddac37a1f!2m2!1d17.3389019!2d50.4685691!3e0?entry=ttu`,
+		`_blank`
+	)
 }
 
 const handleNavItemsAnimation = () => {
@@ -50,10 +53,13 @@ const handleObserver = () => {
 	const currentSection = window.scrollY
 
 	allSections.forEach(section => {
-		if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
+		if (innerWidth <= 576 && section.classList.contains('contact') && section.offsetTop <= currentSection - 450) {
+			navBtnBars.classList.add('grey-bars-color')
+		} else if (section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
 			navBtnBars.classList.add('black-bars-color')
 		} else if (!section.classList.contains('white-section') && section.offsetTop <= currentSection + 60) {
 			navBtnBars.classList.remove('black-bars-color')
+			navBtnBars.classList.remove('grey-bars-color')
 		}
 	})
 }
