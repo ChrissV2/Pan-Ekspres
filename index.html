@@ -236,7 +236,7 @@
 
                 </div>
 
-                <form class="contact__form">
+                <form class="contact__form" action="mail.php" method="post">
 
                     <div class="contact__form-upperPart">
 
@@ -245,7 +245,8 @@
                             <div class="contact__form-iconParent">
 
                                 <label for="name" class="contact__form-label">Imię i nazwisko:</label>
-                                <input type="text" class="contact__form-input" id="name">
+                                <span class="contact__form-errorMsg contact__form-errorMsg--name">*Wprowadź imię i nazwisko</span>
+                                <input type="text" class="contact__form-input" id="name" name="name">
                                 <img src="./dist/img/Icons/edit-name.svg" alt="" class="contact__form-icon">
 
                             </div>
@@ -253,7 +254,8 @@
                             <div class="contact__form-iconParent">
 
                                 <label for="number" class="contact__form-label">Numer telefonu:</label>
-                                <input type="tel" class="contact__form-input" id="number">
+                                <span class="contact__form-errorMsg contact__form-errorMsg--phone">*Wprowadź poprawnie numer telefonu</span>
+                                <input type="tel" class="contact__form-input" id="number" name="number">
                                 <img src="./dist/img/Icons/phone.svg" alt="" class="contact__form-icon">
 
                             </div>
@@ -261,7 +263,8 @@
                             <div class="contact__form-iconParent">
 
                                 <label for="email" class="contact__form-label">Adres e-mail:</label>
-                                <input type="text" class="contact__form-input" id="email">
+                                <span class="contact__form-errorMsg contact__form-errorMsg--mail">*Wprowadź poprwanie adres e-mail</span>
+                                <input type="text" class="contact__form-input" id="email" name="email">
                                 <img src="./dist/img/Icons/mail-outline.svg" alt="" class="contact__form-icon">
 
                             </div>
@@ -271,7 +274,8 @@
                         <div class="contact__form-right">
 
                             <label for="msg" class="contact__form-label">W czym możemy pomóc:</label>
-                            <textarea id="msg" class="contact__form-textarea"></textarea>
+                            <span class="contact__form-errorMsg contact__form-errorMsg--textArea">*Wprowadź wiadomość</span>
+                            <textarea id="msg" class="contact__form-textarea" name="msg"></textarea>
 
                         </div>
 
@@ -305,6 +309,8 @@
                 <button class="contact__modal-closeBtn btn-special-animation">Zamknij</button>
 
             </div>
+
+            <div class="contact__modal-shadow"></div>
 
         </section>
 
