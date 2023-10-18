@@ -457,12 +457,13 @@ body {
 
 		&-errorMsg {
 			position: absolute;
-			display: none;
+			opacity: 0;
 			top: 75%;
 			left: 0;
 			color: red;
 			font-weight: bold;
 			font-size: 1.4rem;
+			transition: opacity 0.3s;
 
 			&--textArea {
 				top: 92%;
@@ -470,7 +471,7 @@ body {
 			}
 
 			&--active {
-				display: block;
+				opacity: 1;
 			}
 		}
 	}
