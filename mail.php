@@ -14,12 +14,12 @@ if (isset($_POST["send"])) {
     $mail->isSMTP();
     $mail->Host = "smtp.gmail.com"
     $mail->SMTPAuth = true;
-    $mail->Username = "polski936@gmail.com";
-    $mail->Password = "pqpj pciw oubv kkwq";
+    $mail->Username = "Mój Gmail"; 
+    $mail->Password = "Moje hasło";
     $mail->SMTPSecure = "ssl";
     $mail->Port = 465;
 
-    $mail->setFrom("polski936@gmail.com");
+    $mail->setFrom("Mój Gmail");
 
     $mail->addAddress($_POST["email"]);
 
