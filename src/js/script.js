@@ -56,10 +56,10 @@ const prepareDOMEvents = () => {
 	window.addEventListener('scroll', handleObserver)
 	callBtn.addEventListener('click', handleCallButton)
 	navBtn.addEventListener('click', handleNavButton)
-	sendBtn.addEventListener('click', function (event) {
-		event.preventDefault()
-	})
-	sendBtn.addEventListener('click', countErrors)
+	// sendBtn.addEventListener('click', function (event) {
+	// 	event.preventDefault()
+	// })
+	// sendBtn.addEventListener('click', countErrors)
 	closeModalBtn.addEventListener('click', closeModal)
 }
 
@@ -127,7 +127,6 @@ const countErrors = () => {
 
 	if(errorCount !== 0) {
 		errorCount = 0
-		return
 	} else if (errorCount === 0 && document.location.search === '?mail_status=sent') {
 		modal.classList.add('contact__modal--active')
 		modalShadow.classList.add('contact__modal-shadow--active')
@@ -136,6 +135,7 @@ const countErrors = () => {
 		errorCount = 0
 	} else if (errorCount === 0 && document.location.search === '?mail_status=error') {
 		console.log('nie udało się wysłać');
+		errorCount = 0
 	}
 
 }
