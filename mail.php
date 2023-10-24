@@ -8,58 +8,39 @@ require "phpmailer/src/PHPMailer.php";
 require "phpmailer/src/SMTP.php";
 
 
-if (isset($_POST["send"])) {
     $mail = new PHPMailer(true);
 
     $mail->isSMTP();
-    $mail->Host = "smtp.gmail.com"
+    $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
-    $mail->Username = "Mój Gmail"; 
-    $mail->Password = "Moje hasło";
+    $mail->Username = "polski936@gmail.com"; 
+    $mail->Password = "pqpj pciw oubv kkwq";
     $mail->SMTPSecure = "ssl";
     $mail->Port = 465;
 
-    $mail->setFrom("Mój Gmail");
+    $mail->setFrom($_POST["email"]);
 
-    $mail->addAddress($_POST["email"]);
+    $mail->addAddress("polski936@gmail.com");
+
+    $senderEmail = $_POST['email'];  
+    $phone = $_POST['number'];        
+    $name = $_POST['name'];         
+    $message = $_POST['msg'];   
 
     $mail->isHTML(true);
+    $mail->setLanguage('pl', './phpmailer/language/');
+    $mail->CharSet = 'UTF-8';
 
-    $mail->Subject = $_POST["number"];
-    $mail->Body = $_POST["msg"];
+
+    $mail->Subject = 'Wiadomość wysłana z formularza ze Strony Pan Ekspres';
+    $mail->Body = "E-mail od: $senderEmail<br>Imię i nazwisko: $name<br>Numer telefonu: $phone<br><br>$message";
 
     $mail->send();
 
-    echo
-    "
-    <script>
-        alert("Message sent");
-        document.location.href = "index.html";
-    </script>
-    ";
-
-}
-
-// $name = $_POST["name"]; 
-// $from = $_POST["email"]; 
-// $number = $_POST["number"];
-// $subject = "Wiadomość z formularza na stronie Pan Ekspres";
-// $to = "inacokey@gmail.com"; 
-// $message = $_POST["msg"]; 
-
-// $txt = "Imię: " . $name . "\r\n" . "Email: " . $from . "\r\n" . "Numer: " . $number . "\r\n" . "\r\n" . "Treść: " . $message;
-
-// $headers = "MIME-Version: 1.0" . "\r\n";
-// $headers .= "Content-Type: text/plain; charset=UTF-8" . "\r\n";
-// $headers .= "From: " . $from . "\r\n";
-// $headers .= "Reply-To: " . $from . "\r\n";
-
-// $mail_status = mail($to, $subject, $txt, $headers);
-
-// if ($mail_status) {
-//     header("Location: /index.html?mail_status=sent");
-// } else {
-//     header("Location: /index.html?mail_status=error");
-// }
+    if ($mail->send()) {
+        header("Location: /index.html?mail_status=sent#contact");
+    } else {
+        header("Location: /index.html?mail_status=error");
+    }
 
 ?>

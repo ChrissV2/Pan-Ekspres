@@ -532,7 +532,7 @@ body {
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		top: 50%;
+		top: 30%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 50%;
@@ -965,6 +965,15 @@ body {
 }
 
 @media (max-width: 576px) {
+
+	.header {
+		background-image: $blue-gradient, url('../img/coffee_machine-small.jpg');
+	}
+
+	.hero-img {
+		background-image: $blue-gradient, url('../img/coffee_spoon-small.jpg');
+	}
+
 	.contact {
 		&__form {
 			width: 95%;
@@ -993,6 +1002,7 @@ body {
 		}
 
 		&__modal {
+			top: 10%;
 			width: 90%;
 
 			&-icon {

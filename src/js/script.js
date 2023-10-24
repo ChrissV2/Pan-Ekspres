@@ -19,12 +19,15 @@ let errorMsgPhone
 let errorMsgName
 let errorMsgMail
 let errorMsgTextArea
+let contactForm
+let contactSection
 let errorCount = 0
 
 const main = () => {
 	prepareDOMElements()
 	prepareDOMEvents()
 	handleCurrentYear()
+	checkUrlParameters()
 }
 
 const prepareDOMElements = () => {
@@ -49,6 +52,8 @@ const prepareDOMElements = () => {
 	errorMsgMail = document.querySelector('.contact__form-errorMsg--mail')
 	errorMsgTextArea = document.querySelector('.contact__form-errorMsg--textArea')
 	modalShadow = document.querySelector('.contact__modal-shadow')
+	contactForm = document.querySelector('.contact__form')
+	contactSection = document.querySelector('.contact')
 }
 
 const prepareDOMEvents = () => {
@@ -59,10 +64,9 @@ const prepareDOMEvents = () => {
 	// sendBtn.addEventListener('click', function (event) {
 	// 	event.preventDefault()
 	// })
-	// sendBtn.addEventListener('click', countErrors)
+	sendBtn.addEventListener('click', countErrors)
 	closeModalBtn.addEventListener('click', closeModal)
 }
-
 
 const closeModal = () => {
 	modal.classList.remove('contact__modal--active')
@@ -88,7 +92,7 @@ const validateName = () => {
 
 const validatePhoneNumber = () => {
 	const re = /^[0-9\s]*$/
-	
+
 	if (re.test(phoneInput.value) && phoneInput.value !== '') {
 		errorMsgPhone.classList.remove('contact__form-errorMsg--active')
 	} else {
@@ -99,9 +103,9 @@ const validatePhoneNumber = () => {
 
 const validateMail = () => {
 	const reg =
-	/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/i
-	
-	if(reg.test(mailInput.value)) {
+		/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,4})$/i
+
+	if (reg.test(mailInput.value)) {
 		errorMsgMail.classList.remove('contact__form-errorMsg--active')
 	} else {
 		errorMsgMail.classList.add('contact__form-errorMsg--active')
@@ -118,36 +122,45 @@ const validateTextArea = () => {
 	}
 }
 
-const countErrors = () => {
+const countErrors = e => {
+	e.preventDefault()
+
 	validateName()
 	validatePhoneNumber()
 	validateMail()
 	validateTextArea()
 
-
-	if(errorCount !== 0) {
+	if (errorCount !== 0) {
 		errorCount = 0
-	} else if (errorCount === 0 && document.location.search === '?mail_status=sent') {
+	} else if (errorCount === 0) {
+		contactForm.submit()
+		clearInputs()
+		errorCount = 0
+	}
+}
+
+const checkUrlParameters = () => {
+	if (document.location.search === '?mail_status=sent') {
 		modal.classList.add('contact__modal--active')
 		modalShadow.classList.add('contact__modal-shadow--active')
 		body.classList.add('overflowHidden')
-		clearInputs()
-		errorCount = 0
-	} else if (errorCount === 0 && document.location.search === '?mail_status=error') {
-		console.log('nie udało się wysłać');
-		errorCount = 0
+	} else if (document.location.search === '?mail_status=error') {
+		alert('Błąd wysyłania wiadomości')
+		console.log('Błąd')
 	}
 
+	setTimeout(() => {
+		const newUrl = window.location.pathname + window.location.search.replace('?mail_status=sent', '');
+		window.history.replaceState({}, document.title, newUrl);
+	}, 3000)
 }
-
-
 
 function active() {
 	navBar.classList.toggle('nav--active')
-	
+
 	navBtnBars.classList.remove('black-bars-color')
 	navBtnBars.classList.remove('grey-bars-color')
-	
+
 	body.classList.toggle('overflowHidden')
 
 	navBtns.forEach(item => {
