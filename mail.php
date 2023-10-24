@@ -35,7 +35,6 @@ require "phpmailer/src/SMTP.php";
     $mail->Subject = 'Wiadomość wysłana z formularza ze Strony Pan Ekspres';
     $mail->Body = "E-mail od: $senderEmail<br>Imię i nazwisko: $name<br>Numer telefonu: $phone<br><br>$message";
 
-    $mail->send();
 
     if ($mail->send()) {
         header("Location: /index.html?mail_status=sent#contact");

@@ -966,6 +966,18 @@ body {
 
 @media (max-width: 576px) {
 
+	.aboutus {
+
+		&__img--first {
+			content: url('../img/service-small.jpg');
+		}
+
+		&__img--second {
+			content: url('../img/companies-small.jpg');
+		}
+
+	}
+
 	.header {
 		background-image: $black-gradient, url('../img/coffee_machine-small.jpg');
 	}
