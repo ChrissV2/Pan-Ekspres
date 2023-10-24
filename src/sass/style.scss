@@ -88,7 +88,7 @@ body {
 	height: 100vh;
 	width: 100%;
 	transform: translateX(100%);
-	background-image: $blue-gradient-solid;
+	background-image: $brown-gradient-solid;
 	z-index: 99;
 	transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 
@@ -785,7 +785,7 @@ body {
 	}
 
 	.header {
-		background-image: $blue-gradient, url('../img/coffee_machine.jpg');
+		background-image: $black-gradient, url('../img/coffee_machine.jpg');
 
 		&__heading {
 			font-size: 10rem;
@@ -821,7 +821,7 @@ body {
 
 	.hero-img {
 		padding: 33rem 2em;
-		background-image: $blue-gradient, url('../img/coffee_spoon.jpg');
+		background-image: $black-gradient, url('../img/coffee_spoon.jpg');
 
 		&__title {
 			font-size: 7.2rem;
@@ -967,16 +967,16 @@ body {
 @media (max-width: 576px) {
 
 	.header {
-		background-image: $blue-gradient, url('../img/coffee_machine-small.jpg');
+		background-image: $black-gradient, url('../img/coffee_machine-small.jpg');
 	}
 
 	.hero-img {
-		background-image: $blue-gradient, url('../img/coffee_spoon-small.jpg');
+		background-image: $black-gradient, url('../img/coffee_spoon-small.jpg');
 	}
 
 	.contact {
 		&__form {
-			width: 95%;
+			width: 100%;
 
 			&-btn {
 				width: 60%;
